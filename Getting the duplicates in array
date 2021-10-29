@@ -1,9 +1,14 @@
+#                             Online Bash Shell.
+#                 Code, Compile, Run and Debug Bash script online.
+# Write your code in this editor and press "Run" button to execute it.
+
+
 i=0
 echo -n "Enter the size of array"
 read size
 while [ $i -lt $size ]
 do
-echo $i =
+echo -n $i =
 read r 
 arr[$i]=${r}
 let i+=1
