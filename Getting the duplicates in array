@@ -1,0 +1,30 @@
+i=0
+echo -n "Enter the size of array"
+read size
+while [ $i -lt $size ]
+do
+echo $i =
+read r 
+arr[$i]=${r}
+let i+=1
+done
+
+sorted=($(printf '%s\n' "${arr[@]}"|sort))
+#echo ${arr[@]} 
+#a=sort <<< arr[@]
+#echo ${a[@]}
+echo ${sorted[@]}
+
+length=($(printf  ${#sorted[@]} ))
+echo $length
+for ((i=0; i< $length; i++))
+do
+
+echo ${sorted[i]}
+j=$(($i+1))
+
+if [ "${sorted[i]}" == "${sorted[j]}" ]; then
+echo ===================================================
+echo The dulicate number is ${sorted[i]}
+fi
+done
