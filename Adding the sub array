@@ -1,0 +1,38 @@
+#                             Online Bash Shell.
+#                 Code, Compile, Run and Debug Bash script online.
+# Write your code in this editor and press "Run" button to execute it.
+
+i=0
+echo -n "Please enter the size of the array:"
+read size
+
+while [ $i -lt $size ] #spaces are present
+do
+echo -n $i =
+read values
+arr[$i]=${values} #no spaces while assigning the value to an array
+i=$((i+1))
+done
+
+echo ${arr[*]}
+
+echo -n "Enter the limitors"
+read min
+read max
+
+if [ $max -lt $min ]; then
+z=$min
+min=$max
+max=$z 
+fi
+#max=$((max-1))
+#min=$((min-1))
+echo $max
+echo $min
+
+for i in ${arr[@]:$min:$max}
+do
+echo vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+sum=$((sum+$i))
+done
+echo $sum
